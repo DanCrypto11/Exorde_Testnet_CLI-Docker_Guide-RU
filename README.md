@@ -5,7 +5,7 @@
 **CPU:** 2 cores
 **RAM:** 4 Gb
 **SSD:** 25 Gb
-##  АКТУАЛЬНАЯ ВЕРСИЯ МОДУЛЯ: 1.3.4a 1
+##  АКТУАЛЬНАЯ ВЕРСИЯ МОДУЛЯ: 1.3.4. 3a
 ##  Краткое и быстрое руководство по установке. Последовательно выполняйте команды одну за другой:
 1
 ```
@@ -45,7 +45,7 @@ sudo systemctl status docker
 ```
 10
 ```
-docker run -d --restart unless-stopped --pull always --name <ИМЯ_КОНТЕЙНЕРА> rg.fr-par.scw.cloud/exorde-labs/exorde-cli -m <ВАШ_ОСНОВНОЙ_ETH_КОШЕЛЕК> -l <УРОВЕНЬ ЛОГОВ>
+docker run -d --restart unless-stopped --pull always --name <ИМЯ_КОНТЕЙНЕРА> exordelabs/exorde-cli -m <ВАШ_ОСНОВНОЙ_ETH_КОШЕЛЕК> -l <УРОВЕНЬ ЛОГОВ>
 ```
 > **Переменные:**
 > - <ИМЯ_КОНТЕЙНЕРА> - придумайте любое название вашего контейнера, например: **exorde-cli_1**
@@ -65,17 +65,17 @@ docker run -d --restart unless-stopped --pull always --name <ИМЯ_КОНТЕЙ
 > Оптимально использовать: 2
 Таким образом, пример готовой команды для запуска одного модуля (контейнера) выглядит следующим образом:
 ```
-docker run -d --restart unless-stopped --pull always --name exorde-cli_1 rg.fr-par.scw.cloud/exorde-labs/exorde-cli -m 0x79fde9a722e72F57706890075b725c0cED00CD0E -l 2
+docker run -d --restart unless-stopped --pull always --name exorde-cli_1 exordelabs/exorde-cli -m 0x79fde9a722e72F57706890075b725c0cED00CD0E -l 2
 ```
 ##  ПРИМЕЧАНИЯ
 Готово! Ваш модуль запущен в контейнере в фоновом режиме. Теперь вы можете оставить все как есть, закрыть терминал CLI, и модуль продолжит работать. Но помните, что нужно следить за обновлениями в Discord и за работоспособностью каждого модуля по отдельности!
 Чтобы запустить дополнительную копию модуля, просто повторите ту же команду, но с другим ИМЕНЕМ_КОНТЕЙНЕРА:
 ```
-docker run -d --restart unless-stopped --pull always --name <ИМЯ_КОНТЕЙНЕРА_2> rg.fr-par.scw.cloud/exorde-labs/exorde-cli -m <ВАШ_ОСНОВНОЙ_ETH_КОШЕЛЕК> -l <УРОВЕНЬ ЛОГОВ>
+docker run -d --restart unless-stopped --pull always --name <ИМЯ_КОНТЕЙНЕРА_2> exordelabs/exorde-cli -m <ВАШ_ОСНОВНОЙ_ETH_КОШЕЛЕК> -l <УРОВЕНЬ ЛОГОВ>
 ```
 Например:
 ```
-docker run -d --restart unless-stopped --pull always --name exorde-cli_2 rg.fr-par.scw.cloud/exorde-labs/exorde-cli -m 0x79fde9a722e72F57706890075b725c0cED00CD0E -l 2
+docker run -d --restart unless-stopped --pull always --name exorde-cli_2 exordelabs/exorde-cli -m 0x79fde9a722e72F57706890075b725c0cED00CD0E -l 2
 ```
 Сколько раз вы ввeдете эту команду с разными именами, столько модулей вы запустите.
 ##  КОНТРОЛЬ N1. СТАТУС КОНТЕЙНЕРА
@@ -183,7 +183,7 @@ docker logs --follow  exorde-cli
 docker rm <container_id> --force
 ```
 ```
-docker run -d --restart unless-stopped --pull always --name <ИМЯ_КОНТЕЙНЕРА> rg.fr-par.scw.cloud/exorde-labs/exorde-cli -m <ВАШ_ОСНОВНОЙ_ETH_КОШЕЛЕК> -l 2
+docker run -d --restart unless-stopped --pull always --name <ИМЯ_КОНТЕЙНЕРА> exordelabs/exorde-cli -m <ВАШ_ОСНОВНОЙ_ETH_КОШЕЛЕК> -l <УРОВЕНЬ_ЛОГОВ>
 ```
 Так вы заново запустите один модуль. Если вы снова пожелаете запустить несколько модулей, то просто повторите последнюю команду, изменив <ИМЯ_КОНТЕЙНЕРА>.
 
